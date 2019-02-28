@@ -46,7 +46,9 @@ class PyStopwatch:
         with th_lock:
             clock = self.clocks[tag]
             clock.state = ClockState.PAUSE
-            clock.sum += time.time() - clock.prev_time
+            delta = time.time() - clock.prev_time
+            clock.sum += delta
+            return clock.sum
 
     def clear(self, tag=None):
         if tag is None:
