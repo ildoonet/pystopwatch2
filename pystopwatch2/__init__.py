@@ -1,1 +1,1 @@
-from watch import PyStopwatch
+from pystopwatch2.watch import PyStopwatch
